@@ -1,35 +1,18 @@
+---
+layout: default
+section: blog
+---
 
-<html>
-<head>
-<style>
-  h1 {color: blue;
-      text-decoration: underline;
-      font-family: “Tahoma”, Verdana;
-	}
+<div class='listing col6 pad4h margin3'>
+  {% for item in site.categories.blog limit:1000 %}
+    {% capture date %}{{ item.date | date: '%B %Y' }}{% endcapture %}
+    {% capture ndate %}{{ item.next.date | date: '%B %Y' }}{% endcapture %}
 
-  h2 {color: green;
-	}
-  
-   p {font-family: “Tahoma”, Verdana;
-	background-color: light blue;
-	}
+    {% if date != ndate %}
+      <h4 class='month'>{{item.date | date: '%B %Y'}}</h4>
+    {% endif %}
+    <a class='item' href='{{site.baseurl}}{{item.url}}'>{{item.title}} <span class='date'>&#126; {{item.date | date:"%b %d"}}</span></a>
+  {% endfor %}
+</div>
 
-</style>
-  <title>This is a practice site</title>
-</head>
-  <body>
-      <ul>
-	<li>One</li>
-	<li>Two</li>
-	<li>Three</li>
-	<li>Four</li>
-      </ul>
-      <h1>Hello</h1>
-      <p>hello hello hello paragraph</p>
-      <p>hello hello hello paragraph2</p>
-      
-      <h2>This is the second part of my index page</h2>
-      <p>This is a another paragraph.</p>
-
-  </body>
-</html>
+{% include rss-link.html %}
