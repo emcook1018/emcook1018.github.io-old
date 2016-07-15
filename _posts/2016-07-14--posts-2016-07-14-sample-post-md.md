@@ -2,7 +2,7 @@
 layout: blog
 category: blog
 published: true
-title: _posts/2016-07-14-sample-post.md
+title: _posts/2016-07-13-sample-post
 ---
 test test test this is a paragraph
 hello hello hello
