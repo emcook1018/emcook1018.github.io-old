@@ -1,7 +1,7 @@
 ---
 layout: blog
 category: blog
-published: false
+published: true
 title: _posts/2016-07-14-sample-post.md
 ---
 test test test this is a paragraph
